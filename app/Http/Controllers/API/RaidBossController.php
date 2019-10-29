@@ -40,4 +40,20 @@ class RaidBossController extends Controller
 
     }
 
+    function getTier($mon_alias)
+    {
+        $mon = MonAlias::where('alias', $mon_alias)->first();
+        $mon = $mon['pokemon_name'];
+
+        $tier = RaidBoss::where('pokemon_name',$mon)->first();
+
+        if($tier) {
+            return response()->json($tier['tier']);
+        }else{
+            return response()->json('not-found');
+        }
+
+
+    }
+
 }

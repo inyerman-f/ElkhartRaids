@@ -26,7 +26,9 @@ Route::get('gym-alias-name/{gym_alias}','API\RaidController@get_gym_name');
 Route::get('gym-aliases','API\GymAliasController@show_all');
 
 
+
 Route::post('raidboss/add','API\RaidBossController@add');
+Route::get('bossTier/{mon_alias}','API\RaidBossController@getTier');
 Route::post('raid/create','API\RaidController@store');
 
 
