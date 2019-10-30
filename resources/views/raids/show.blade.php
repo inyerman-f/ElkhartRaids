@@ -62,7 +62,7 @@
     @section('relativepath','raids/'.$raid->gym_id)
     @section('page-type','website')
     @section('Description','This  Gym has a Raid for '.$raid->boss_name.' ending at '.$raid->end_time)
-    @section('image','https://elkhartraids.website'.$raid->boss_image)
+    @section('image',$raid->boss_image)
     @include('chunks.htmlHead')
 @endsection
 
