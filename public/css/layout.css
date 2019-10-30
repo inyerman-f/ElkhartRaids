@@ -26,7 +26,7 @@
     position: relative;
     border: solid gray medium;
     margin: auto;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 .card-body{
     height: 150px!important;
@@ -45,7 +45,7 @@
     height: 80vh;
 }
 .small-image{
-    width:180px;height: 180px;position:relative; opacity: 0.98;margin-top:7px;
+    width:180px;height: 180px;position:relative;margin-top:7px;
 }
 .gym-image{
     position: absolute;
