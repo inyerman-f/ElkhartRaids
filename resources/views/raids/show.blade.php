@@ -11,7 +11,7 @@
         if ($raid->boss_name ==='TBD')
         {$mon_id=0;}
         else{
-            $url = 'https://pokeapi.co/api/v2/pokemon/'.strtolower($raid->boss_name);
+            $url = 'https://pokeres.bastionbot.org/images/pokemon/'.strtolower($raid->boss_name);
             $data = file_get_contents($url); // put the contents of the file into a variable
             $mon = json_decode($data, true); // decode JSON feed
             $mon_id = $mon['id'];
