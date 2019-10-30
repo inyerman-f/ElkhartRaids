@@ -11,7 +11,7 @@
         if ($raid->boss_name ==='TBD')
         {$mon_id=0;}
         else{
-            $url = 'https://pokeres.bastionbot.org/images/pokemon/'.strtolower($raid->boss_name);
+            $url = 'https://pokeapi.co/api/v2/pokemon/'.strtolower($raid->boss_name);
             $data = file_get_contents($url); // put the contents of the file into a variable
             $mon = json_decode($data, true); // decode JSON feed
             $mon_id = $mon['id'];
@@ -32,7 +32,7 @@
 
 
         if ($mon_id > 0){
-            $raid->boss_image = '/https://pokeres.bastionbot.org/images/pokemon/'.$mon_id.'.png';
+            $raid->boss_image = 'https://pokeres.bastionbot.org/images/pokemon/'.$mon_id.'.png';
         }else{
             //this will be returned if the raid is not active yet.
             $mon_name = 'TBD';
