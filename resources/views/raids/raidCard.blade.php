@@ -46,7 +46,7 @@
     */
 
     if ($mon_id > 0){
-        $raid->boss_image = '/img/mons/'.$mon_id.'.png';
+        $raid->boss_image = 'http://pokeapi.co/media/sprites/pokemon/'.$mon_id.'.png';
     }else{
         //this will be returned if the raid is not active yet.
         $mon_name = 'TBD';
