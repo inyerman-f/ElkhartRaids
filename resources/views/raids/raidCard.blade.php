@@ -52,7 +52,7 @@
         $mon_name = 'TBD';
             if ($raid->raid_tier === 5 ){
             $raid->boss_image = '/img/egg_legendary.png';
-            }elseif($raid->rai_tier < 3){
+            }elseif($raid->rai_tier === 3 || $raid->raid_tier === 4){
             $raid->boss_image = '/img/egg_normal.png';
             }else{
             $raid->boss_image = '/img/egg_rare.png';
