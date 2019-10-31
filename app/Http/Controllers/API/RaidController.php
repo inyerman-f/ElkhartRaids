@@ -46,7 +46,8 @@ class RaidController extends Controller
             $boss_name = "TBD"
 
         }else {
-            $hatch_time = '';
+            $hatch_time = new DateTime();
+            $hatch_time = $hatch_time->add(new DateInterval('PT' .($request->end_time - 45).'M'));
             $end_time = new DateTime();
             $end_time->add(new DateInterval('PT' . $request->end_time . 'M'));
         }
@@ -66,7 +67,7 @@ class RaidController extends Controller
                 'entered_by' => $request->entered_by,
                 'hatched'   =>$request->hatched,
                 'gym_location' => $location,
-                'raid_tier'=>$request->raid_tier,
+                'raid_tier'=>$request->tier,
                 'recorded' => date('Y-m-d H:i:s', time())
             ]);
 
@@ -93,7 +94,7 @@ class RaidController extends Controller
                 'entered_by' => $request->entered_by,
                 'hatched'   =>$request->hatched,
                 'gym_location' => $location,
-                'raid_tier'=>$request->raid_tier,
+                'raid_tier'=>$request->tier,
                 'recorded' => date('Y-m-d H:i:s', time())
             ]);
                 $ret = [
