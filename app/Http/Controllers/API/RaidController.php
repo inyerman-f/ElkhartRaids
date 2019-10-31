@@ -22,6 +22,7 @@ class RaidController extends Controller
         $gym_id = GymDetails::where('name',$gym_name)->first();
         $gym_id = $gym_id['gym_id'];
         $boss_name = $request->boss_name;
+        $raid_tier = $request->tier;
 
         $boss_name = MonAlias::where('alias',$boss_name)->first();
         if($boss_name) {
@@ -46,8 +47,8 @@ class RaidController extends Controller
             $boss_name = "TBD"
 
         }else {
-            $hatch_time = new DateTime();
-            $hatch_time = $hatch_time->add(new DateInterval('PT' .($request->end_time - 45).'M'));
+            $hatch_time =''// new DateTime();
+            //$hatch_time = $hatch_time->add(new DateInterval('PT' .($request->end_time - 45).'M'));
             $end_time = new DateTime();
             $end_time->add(new DateInterval('PT' . $request->end_time . 'M'));
         }
@@ -67,7 +68,7 @@ class RaidController extends Controller
                 'entered_by' => $request->entered_by,
                 'hatched'   =>$request->hatched,
                 'gym_location' => $location,
-                'raid_tier'=>$request->tier,
+                'raid_tier'=>$raid_tier,
                 'recorded' => date('Y-m-d H:i:s', time())
             ]);
 
@@ -77,6 +78,7 @@ class RaidController extends Controller
                     'boss_name'=>$boss_name,
                     'gym_name'=>$gym_name,
                     'end_time'=>$end_time,
+                    'raid_tier'=>$raid_tier
                 ];
 
                 $ret = json_encode($ret['gym_id']);
@@ -94,7 +96,7 @@ class RaidController extends Controller
                 'entered_by' => $request->entered_by,
                 'hatched'   =>$request->hatched,
                 'gym_location' => $location,
-                'raid_tier'=>$request->tier,
+                'raid_tier'=>$raid_tier,
                 'recorded' => date('Y-m-d H:i:s', time())
             ]);
                 $ret = [
@@ -102,6 +104,7 @@ class RaidController extends Controller
                     'boss_name'=>$boss_name,
                     'gym_name'=>$gym_name,
                     'hatch'=>$hatch_time,
+                    'raid_tier'=>$raid_tier,
                     'end_time'=>$end_time,
                 ];
 
