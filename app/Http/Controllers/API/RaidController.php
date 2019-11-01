@@ -43,7 +43,7 @@ class RaidController extends Controller
             $end_time->add(new DateInterval('PT' . $request->end_time . 'M'));
            // $hatch_time = $end_time;
             $hatch_time = new DateTime();
-            $hatch_time = $hatch_time->sub(new DateInterval('PT' .($request->end_time + 45).'M'));
+            $hatch_time = $hatch_time->sub(new DateInterval('ET' .($request->end_time + 45).'M'));
         }
         $incursion = Raid::find($gym_id);
         if ( $incursion === null) {
