@@ -37,7 +37,8 @@ class RaidController extends Controller
             $end_time = new DateTime();
             $end_time = $end_time->add(new DateInterval('PT' .($request->end_time + 45).'M'));
         }else {
-            $hatch_time = '';
+            $hatch_time = new DateTime();
+            $hatch_time = $hatch_time->add(new DateInterval('PT' .($request->end_time - 45).'M'));
             $end_time = new DateTime();
             $end_time->add(new DateInterval('PT' . $request->end_time . 'M'));
         }
