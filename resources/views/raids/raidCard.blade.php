@@ -6,7 +6,7 @@
     $gym = \App\Gym::find($raid->gym_id);
     $gymLat = $gym['latitude'];
     $gymLon = $gym['longitude'];
-    $hatch_time = $raid->hatch_time;
+    $hatch_time = date('Y-m-d h:i:s A', $raid->hatch_time);
     
 
     if ($raid->boss_name ==='TBD')
