@@ -6,6 +6,8 @@
     $gym = \App\Gym::find($raid->gym_id);
     $gymLat = $gym['latitude'];
     $gymLon = $gym['longitude'];
+    $hatch_time = $raid->hatch_time;
+    
 
     if ($raid->boss_name ==='TBD')
     {$mon_id=0;}
@@ -74,6 +76,7 @@
             <h6 style="margin-top:10px;">{{$raid->gym_name}}</h6>
             Raid Level: {{$raid->raid_tier}}<br>
             Boss Name: {{$raid->boss_name}}<br>
+            {{@if($hatch_time)}}Starts:{{$hatchtime}}{{@endif}}
             Ends: {{@date('h:i',strtotime($raid->end_time))}}   <br>
         </div>
         <input type="submit" value="View Raid Details" onclick="window.open('/raids/{{$raid->gym_id}}');" style="width:90%;"/>
