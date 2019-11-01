@@ -33,15 +33,17 @@ class RaidController extends Controller
         $location = $location['gym_location'];
         if ($request->hatched == 0 ){
             $hatch_time = new DateTime();
-            $hatch_time = $hatch_time->add(new DateInterval('PT' .$request->end_time .'M'));
+            $hatch_time->add(new DateInterval('PT' .$request->end_time .'M'));
             $end_time = new DateTime();
-            $end_time = $end_time->add(new DateInterval('PT' .($request->end_time + 45).'M'));
+            $end_time->add(new DateInterval('PT' .($request->end_time + 45).'M'));
         }else {
-           // $hatch_time = new DateTime();
-           // $hatch_time = $hatch_time->add(new DateInterval('PT' .($request->end_time - 45).'M'));
+            //
+            //$hatch_time->sub(new DateInterval('PT' .($request->end_time + 45).'M'));
             $end_time = new DateTime();
             $end_time = $end_time->add(new DateInterval('PT' . $request->end_time . 'M'));
-            $hatch_time = $end_time->sub(new DateInterval('PT' .($request->end_time + 45).'M'));
+           // $hatch_time = $end_time;
+            $hatch_time = new DateTime();
+            $hatch_time->sub(new DateInterval('PT' .($end_time + 45).'M'));
         }
         $incursion = Raid::find($gym_id);
         if ( $incursion === null) {
