@@ -31,7 +31,7 @@ class RaidController extends Controller
         }
         $location = GymDetails::find($gym_id);
         $location = $location['gym_location'];
-        if ($request->hatched === 0 ){
+        if ($request->hatched == 0 ){
             $hatch_time = new DateTime();
             $hatch_time = $hatch_time->add(new DateInterval('PT' .$request->end_time .'M'));
             $end_time = new DateTime();
