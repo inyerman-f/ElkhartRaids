@@ -11,7 +11,7 @@ class Raid extends Model
     protected $primaryKey = 'gym_id';
     public $incrementing = false;
     public $timestamps = false;
-    protected $fillable = ['gym_id','boss_name','gym_name','end_time','gym_location','raid_tier'];
+    protected $fillable = ['gym_id','boss_name','gym_name','end_time','gym_location','raid_tier','hatch_time'];
 
     public $gym_name;
     public $gym_image;
