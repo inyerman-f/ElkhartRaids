@@ -25,6 +25,7 @@
         $gymDetails = new \App\GymDetails();
         $raid->gym_name = $gymDetails->get_gym_name($raid->gym_id);
         $raid->gym_image = $gymDetails->get_gym_image($raid->gym_id);
+        $raid->hatch_time= date('Y-m-d h:i:s',strtotime($raid->hatch_time)-(env('UTC_TIME_DIFFERENCE')*60*60));
         $raid->end_time = date('Y-m-d h:i:s',strtotime($raid->end_time)-(env('UTC_TIME_DIFFERENCE')*60*60));
 
         $now = date('Y-m-d h:i:s', strtotime(time())-(env('UTC_TIME_DIFFERENCE')*60*60));
