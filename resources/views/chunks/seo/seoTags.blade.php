@@ -3,3 +3,5 @@
     <meta property="og:title"              content="@yield('title')" />
     <meta property="og:description"        content="@yield('Description')" />
     <meta property="og:image"              content="@yield('image')" />
+    <meta property="og:width"              content="600px"/>
+    <meta property="og:height"             content="415px"/>
