@@ -5,3 +5,4 @@
     <meta property="og:image"              content="@yield('image')" />
     <meta property="og:width"              content="600px"/>
     <meta property="og:height"             content="415px"/>
+    <meta property="fb:app_id"             content="313874449202969"/>
