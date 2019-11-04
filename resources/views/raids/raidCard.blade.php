@@ -7,8 +7,8 @@
     $gymLat = $gym['latitude'];
     $gymLon = $gym['longitude'];
     if(isset($raid->hatch_time)){
-    $hatch_time = $raid->hatch_time;
-    $hatch_time = date('Y-m-d h:i:s A',strtotime($hatch_time)-( env('UTC_TIME_DIFFERENCE')*60*60) );
+    //$hatch_time = $raid->hatch_time;
+    $hatch_time = date('Y-m-d h:i:s A',strtotime($raid->hatch_time)-( env('UTC_TIME_DIFFERENCE')*60*60) );
     }
 
     if ($raid->boss_name ==='TBD')
