@@ -34,7 +34,7 @@
     <div class="tab-content">
     @php
         $timeDiff = env('UTC_TIME_DIFFERENCE') ;
-        $raidos = \App\Raid::whereRaw('now() < DATE_ADD(end_time, INTERVAL 1 HOUR) ORDER BY raid_tier DESC')->count();
+        $raidos = \App\Raid::whereRaw('now() < DATE_ADD(end_time, INTERVAL 0 HOUR) ORDER BY raid_tier DESC')->count();
     @endphp
     @if($raidos == 0)-
             <div id="all-raids" class="tab-pane fade in active show">
@@ -53,7 +53,7 @@
             <div id="all-raids" class="tab-pane fade in active show">
                 @php
                   //  $timeDiff = (env('UTC_TIME_DIFFERENCE') * -1);
-                    $raids = \App\Raid::whereRaw('now() < DATE_ADD(end_time, INTERVAL 1 HOUR) ORDER BY raid_tier DESC')->get();
+                    $raids = \App\Raid::whereRaw('now() < DATE_ADD(end_time, INTERVAL 0 HOUR) ORDER BY raid_tier DESC')->get();
                 @endphp
                 @each('raids.raidCard',$raids,'raid')
             </div>
