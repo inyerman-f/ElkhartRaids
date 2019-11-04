@@ -38,10 +38,10 @@
             $mon_name = 'TBD';
                 if ($raid->raid_tier === 5 ){
                 $raid->boss_image = '/img/egg_legendary.png';
-                }elseif($raid->rai_tier < 3){
-                $raid->boss_image = '/img/egg_normal.png';
-                }else{
+                }elseif($raid->raid_tier === 3 || $raid->raid_tier === 4){
                 $raid->boss_image = '/img/egg_rare.png';
+                }else{
+                $raid->boss_image = '/img/egg_normal.png';
                 }
             $move1 = 'TBD';
             $move2 = 'TBD';
@@ -98,7 +98,7 @@
                     Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
                     Boss Name: {{$raid->boss_name}}<br>
                     Raid Level: {{$raid->raid_tier}}<br>
-                    Raid Ends: {{$raid->end_time}}
+                    Raid Ends: {{@date('h:i', $raid->end_time)}}
                 </div>
                 @else
                     <div class="card-img-top">
