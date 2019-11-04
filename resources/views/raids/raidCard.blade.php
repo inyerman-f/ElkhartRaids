@@ -56,10 +56,10 @@
         $mon_name = 'TBD';
             if ($raid->raid_tier === 5 ){
             $raid->boss_image = '/img/egg_legendary.png';
-            }elseif($raid->rai_tier === 3 || $raid->raid_tier === 4){
+            }elseif($raid->raid_tier === 3 || $raid->raid_tier === 4){
             $raid->boss_image = '/img/egg_rare.png';
             }else{
-            $raid->boss_image = '/img/egg_rare.png';
+            $raid->boss_image = '/img/egg_normal.png';
             }
         $move1 = 'TBD';
         $move2 = 'TBD';
