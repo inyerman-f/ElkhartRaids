@@ -99,7 +99,10 @@
                     Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
                     Boss Name: {{$raid->boss_name}}<br>
                     Raid Level: {{$raid->raid_tier}}<br>
-                    Raid Ends: {{@date('h:i', $raid->end_time)}}
+                    @if(isset($hatch_time))
+                        Starts:{{@date('h:i',strtotime($hatch_time))}} <br>
+                    @endif
+                    Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
                 </div>
                 @else
                     <div class="card-img-top">
