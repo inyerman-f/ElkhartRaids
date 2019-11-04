@@ -57,7 +57,7 @@
             if ($raid->raid_tier === 5 ){
             $raid->boss_image = '/img/egg_legendary.png';
             }elseif($raid->rai_tier === 3 || $raid->raid_tier === 4){
-            $raid->boss_image = '/img/egg_normal.png';
+            $raid->boss_image = '/img/egg_rare.png';
             }else{
             $raid->boss_image = '/img/egg_rare.png';
             }
@@ -79,7 +79,7 @@
             Raid Level: {{$raid->raid_tier}}<br>
             Boss Name: {{$raid->boss_name}}<br>
             @if(isset($hatch_time))
-            Starts:{{$hatch_time}} <br>
+            Starts:{{@date('h:i',$hatch_time)}} <br>
             @endif
             Ends: {{@date('h:i',strtotime($raid->end_time))}}   <br>
         </div>
