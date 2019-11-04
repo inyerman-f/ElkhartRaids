@@ -7,8 +7,8 @@
     $gymLat = $gym['latitude'];
     $gymLon = $gym['longitude'];
     if(isset($raid->hatch_time)){
-    $hatch_time = $raid->hatch_time;
-    //$hatch_time = date('Y-m-d h:i:s',$raid->hatch_time -( env('UTC_TIME_DIFFERENCE')*60*60) );
+    //$hatch_time = $raid->hatch_time;
+    $hatch_time = date('Y-m-d h:i:s',strtotime($raid->hatch_time)-( env('UTC_TIME_DIFFERENCE')*60*60) );
     }
 
     if ($raid->boss_name ==='TBD')
@@ -79,7 +79,7 @@
             Raid Level: {{$raid->raid_tier}}<br>
             Boss Name: {{$raid->boss_name}}<br>
             @if(isset($hatch_time))
-            Starts:{{@date('h:i',$hatch_time)}} <br>
+            Starts:{{@date('h:i',strtotime($hatch_time))}} <br>
             @endif
             Ends: {{@date('h:i',strtotime($raid->end_time))}}   <br>
         </div>
