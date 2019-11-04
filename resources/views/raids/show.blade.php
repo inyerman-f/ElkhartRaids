@@ -34,6 +34,7 @@
 
         if ($mon_id > 0){
             $raid->boss_image = 'https://pokeres.bastionbot.org/images/pokemon/'.$mon_id.'.png';
+            $raid_description = 'This  Gym has a Raid for '.$raid->boss_name.' ending at '. date('h:i:s',strtotime($raid->end_time));
         }else{
             //this will be returned if the raid is not active yet.
             $mon_name = 'TBD';
@@ -44,6 +45,11 @@
                 }else{
                 $raid->boss_image = 'https://elkhartraids.website/img/egg_normal.png';
                 }
+            if($raid->hatcht_time){
+            $raid_description = 'This  Gym has a Raid for a level '.$raid->raid_tier.' raid hatching at '. date('h:i:s',strtotime($raid->hatch_time));
+            }else{
+            $raid_description = 'This  Gym has a Raid for a level '.$raid->raid_tier.' raid ending at '. date('h:i:s',strtotime($raid->end_time));
+            }
             $move1 = 'TBD';
             $move2 = 'TBD';
             }
@@ -62,7 +68,7 @@
     @section('title','Raid at: '.$raid->gym_name)
     @section('relativepath','raids/'.$raid->gym_id)
     @section('page-type','website')
-    @section('Description','This  Gym has a Raid for '.$raid->boss_name.' ending at '. date('h:i:s',strtotime($raid->end_time)) )
+    @section('Description', $raid_description )
     @section('image', $raid->boss_image)
     @include('chunks.htmlHead')
 @endsection
@@ -99,8 +105,8 @@
                     Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
                     Boss Name: {{$raid->boss_name}}<br>
                     Raid Level: {{$raid->raid_tier}}<br>
-                    @if(isset($hatch_time))
-                        Starts:{{@date('h:i',strtotime($hatch_time))}} <br>
+                    @if(isset($raid->hatch_time))
+                        Starts:{{@date('h:i',strtotime($raid->hatch_time))}} <br>
                     @endif
                     Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
                 </div>
