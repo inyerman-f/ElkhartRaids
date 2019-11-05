@@ -142,7 +142,7 @@
                     document.getElementById('map'),
                     {
                     zoom: 15,
-                    center: uluru,
+                    position: uluru,
                     addressControlOptions: {
                         position: google.maps.ControlPosition.BOTTOM_CENTER
                     },
