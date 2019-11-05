@@ -91,7 +91,8 @@
         <style>
             /* Set the size of the div element that contains the map */
             #map {
-                height: 230px;  /* The height is 400 pixels */
+                min-height: 230px;
+                height:70%;/* The height is 400 pixels */
                 width: 100%;  /* The width is the width of the web page */
             }
         </style>
@@ -114,9 +115,9 @@
                                 Starts: {{@date('h:i',strtotime($raid->hatch_time))}} <br>
                             @endif
                             Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
+                            <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/>
                         </div>
                     </div>
-                    <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/>
                 </div>
                 @else
                     <div class="card-img-top">
