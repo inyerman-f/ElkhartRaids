@@ -152,9 +152,9 @@
 
                     let label =
                     '<div class="marker-info-window">' +
-                            'Gym:{{$raid->gym_name}}'+
+                            'Gym:{{$raid->gym_name}}<br>'+
                             'Starts:  {{@date('h:i',strtotime($raid->hatch_time))}}<br>'+
-                            'Ends: {{@date('h:i',strtotime($raid->end_time))}}'+
+                            'Ends: {{@date('h:i',strtotime($raid->end_time))}}<br>'+
                     '</div>';
 
                 @else
