@@ -132,7 +132,10 @@
                 // The map, centered at Uluru
                 var map = new google.maps.Map(
                     document.getElementById('map'), {zoom: 15, center: uluru});
-                var icono = '{{$raid->boss_image}}';
+                var icono = {
+                    url: '{{$raid->boss_image}}',
+                    scaledSize : new google.maps.Size(50, 50),
+                };
                 // The marker, positioned at Uluru
                 var marker = new google.maps.Marker({
                     position: uluru,
