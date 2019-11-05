@@ -106,7 +106,7 @@
                     <div id="map"></div>
                     <div class="card-text">
                         <div class="card-footer">
-                            {{--Gym Id: {{$raid->gym_id}}<br>--}}
+                            {{--Gym Id: {{$raid->gym_id}}<br>
                             Gym Name: {{$raid->gym_name}}<br>
                             Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
                             Boss Name: {{$raid->boss_name}}<br>
@@ -115,6 +115,7 @@
                                 Starts: {{@date('h:i',strtotime($raid->hatch_time))}} <br>
                             @endif
                             Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
+                            --}}
                             <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/>
                         </div>
                     </div>
@@ -138,18 +139,30 @@
             // Initialize and add the map
             function initMap() {
                 // The location of Uluru
-                var uluru = {lat: {{$gymLat}}, lng: {{$gymLon}} };
+                let uluru = {lat: {{$gymLat}}, lng: {{$gymLon}} };
                 // The map, centered at Uluru
-                var map = new google.maps.Map(
+                let map = new google.maps.Map(
                     document.getElementById('map'), {zoom: 15, center: uluru});
-                var icono = {
+                let icono = {
                     url: '{{$raid->boss_image}}',
                     scaledSize : new google.maps.Size(50, 50),
                 };
+                let titulo = 'Level {{$raid->raid_tier}} raid at {{$raid->gym_name}}.';
+                @if(isset($raid->hatch_time))
+
+                    let label = 'Starts:  {{@date('h:i',strtotime($raid->hatch_time))}} <br>Ends: {{@date('h:i',strtotime($raid->end_time))}}';
+
+                @else
+                    let label = 'Ends: {{@date('h:i',strtotime($raid->end_time))}}';
+                @endif
+
+
                 // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({
+                let marker = new google.maps.Marker({
                     position: uluru,
+                    title: titulo,
                     map: map,
+                    label: labels,
                     icon: icono
                 });
             }
