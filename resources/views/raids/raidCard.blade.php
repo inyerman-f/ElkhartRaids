@@ -79,7 +79,7 @@
             Raid Level: {{$raid->raid_tier}}<br>
             Boss Name: {{$raid->boss_name}}<br>
             @if(isset($hatch_time))
-            Starts:{{@date('h:i',strtotime($hatch_time))}} <br>
+            Starts: {{@date('h:i',strtotime($hatch_time))}} <br>
             @endif
             Ends: {{@date('h:i',strtotime($raid->end_time))}}   <br>
         </div>
