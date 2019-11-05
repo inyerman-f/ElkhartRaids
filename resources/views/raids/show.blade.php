@@ -150,10 +150,19 @@
                 let titulo = 'Level {{$raid->raid_tier}} raid at {{$raid->gym_name}}.';
                 @if(isset($raid->hatch_time))
 
-                    let label = 'Starts:  {{@date('h:i',strtotime($raid->hatch_time))}} <br>Ends: {{@date('h:i',strtotime($raid->end_time))}}';
+                    let label =
+                    '<div class="marker-info-window">' +
+                            'Gym:{{$raid->gym_name}}'+
+                            'Starts:  {{@date('h:i',strtotime($raid->hatch_time))}}<br>'+
+                            'Ends: {{@date('h:i',strtotime($raid->end_time))}}'+
+                    '</div>';
 
                 @else
-                    let label = 'Ends: {{@date('h:i',strtotime($raid->end_time))}}';
+                    let label =
+                    '<div class="marker-info-window">' +
+                            'Gym:{{$raid->gym_name}}'+
+                            'Ends: {{@date('h:i',strtotime($raid->end_time))}}'+
+                    '</div>';
                 @endif
 
 
