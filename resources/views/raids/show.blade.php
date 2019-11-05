@@ -165,13 +165,11 @@
                     '</div>';
                 @endif
 
-                google.maps.event.addListener(marker, 'click', (function(marker) {
-                    return function() {
-                        infoWindow.setContent(label);
-                        infoWindow.open(map, marker);
-                    }
-                })(marker));
-                map.fitBounds(bounds);
+                let infowindow = new google.maps.InfoWindow({
+                    content: label
+                });
+
+
 
                 // The marker, positioned at Uluru
                 let infoWindow = new google.maps.InfoWindow();
@@ -180,6 +178,9 @@
                     title: titulo,
                     map: map,
                     icon: icono
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
                 });
             }
         </script>
