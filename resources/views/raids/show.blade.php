@@ -145,7 +145,7 @@
                     document.getElementById('map'), {zoom: 15, center: uluru});
                 let icono = {
                     url: '{{$raid->boss_image}}',
-                    scaledSize : new google.maps.Size(50, 50),
+                    scaledSize : new google.maps.Size(250, 250),
                 };
                 let titulo = 'Level {{$raid->raid_tier}} raid at {{$raid->gym_name}}.';
                 @if(isset($raid->hatch_time))
