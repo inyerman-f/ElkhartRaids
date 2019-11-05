@@ -136,8 +136,23 @@
                 // The location of Uluru
                 var uluru = {lat: {{$gymLat}}, lng: {{$gymLon}} };
                 // The map, centered at Uluru
+               //var panorama = new google.maps.StreetViewPanorama(
+               //     document.getElementById('map-canvas'), panoOptions);
                 var map = new google.maps.Map(
-                    document.getElementById('map'), {zoom: 15, center: uluru});
+                    document.getElementById('map'),
+                    {
+                    zoom: 15,
+                    center: uluru,
+                    addressControlOptions: {
+                        position: google.maps.ControlPosition.BOTTOM_CENTER
+                    },
+                    linksControl: false,
+                    panControl: false,
+                    zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.SMALL
+                    },
+                    enableCloseButton: false
+                    });
                 var icono = {
                     url: '{{$raid->boss_image}}',
                     scaledSize : new google.maps.Size(50, 50),
@@ -145,7 +160,7 @@
                 // The marker, positioned at Uluru
                 var marker = new google.maps.Marker({
                     position: uluru,
-                    map: panorama,
+                    map: map,
                     icon: icono
                 });
             }
