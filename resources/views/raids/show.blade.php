@@ -95,38 +95,41 @@
         </style>
         <div class="individual-item-card card w-100" >
                 @if($now < $raid->end_time)
+
                 <div class="card-img-top">
                     <a href="#"><img class="small-image" src="{{$raid->boss_image}}"></a>
                 </div>
+
                 <div class="card-body">
-                <div class="card-text">
-                 {{--Gym Id: {{$raid->gym_id}}<br>--}}
-                    Gym Name: {{$raid->gym_name}}<br>
-                    Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
-                    Boss Name: {{$raid->boss_name}}<br>
-                    Raid Level: {{$raid->raid_tier}}<br>
-                    @if(isset($raid->hatch_time))
-                        Starts: {{@date('h:i',strtotime($raid->hatch_time))}} <br>
-                    @endif
-                    Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
+                        <div class="card-text">
+                            Gym Id: {{$raid->gym_id}}<br>
+                            Gym Name: {{$raid->gym_name}}<br>
+                            Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
+                            Boss Name: {{$raid->boss_name}}<br>
+                            Raid Level: {{$raid->raid_tier}}<br>
+                            @if(isset($raid->hatch_time))
+                                Starts: {{@date('h:i',strtotime($raid->hatch_time))}} <br>
+                            @endif
+                            Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
+                        </div>
+                    <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/><br><br>
                 </div>
                 @else
-                    <div class="card-img-top">
-                    <div id="map"></div>
-                    {{--
-                        <a href="#"><img class="small-image" src="https://gonintendo.com/system/file_uploads/uploads/000/052/819/medium/pikachu_sorprendido.jpg"></a>
-                    </div>
-                    <div class="card-body">
+
+                <div class="card-img-top">
+                    <a href="#"><img class="small-image" src="https://gonintendo.com/system/file_uploads/uploads/000/052/819/medium/pikachu_sorprendido.jpg"></a>
+                </div>
+
+                <div class="card-body">
                     <div class="card-text">
                         <h1>The raid at this gym has expired. Please check back later, or explore other on going <a href="/raids">raids</a>.</h1>
-                    --}}
-
                     </div>
+                    <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/><br><br>
+                </div>
                 @endif
-                <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/><br><br>
                 <!--input type="submit" value="Edit raid Details" onclick="window.location='/raids/{{$raid->gym_id}}/edit';" style="width: 45%"/-->
-            </div>
         </div>
+
         <script>
             // Initialize and add the map
             function initMap() {
