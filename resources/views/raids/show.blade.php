@@ -97,13 +97,14 @@
         </style>
         <div class="individual-item-card card w-100" >
                 @if($now < $raid->end_time)
-                <div class="card-img-top">
+               {{-- <div class="card-img-top">
                     <a href="#"><img class="small-image" src="{{$raid->boss_image}}"></a>
                 </div>
+                --}}
                 <div class="card-body">
                     <div id="map"></div>
                     <div class="card-text">
-                     {{--Gym Id: {{$raid->gym_id}}<br>--}}
+                        {{--Gym Id: {{$raid->gym_id}}<br>--}}
                         Gym Name: {{$raid->gym_name}}<br>
                         Location : <a href="https://google.com/maps/place/{{$raid->gym_location}}">Get Driving Directions</a><br>
                         Boss Name: {{$raid->boss_name}}<br>
@@ -112,7 +113,9 @@
                             Starts: {{@date('h:i',strtotime($raid->hatch_time))}} <br>
                         @endif
                         Raid Ends: {{@date('h:i',strtotime($raid->end_time))}}
+
                     </div>
+                    <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/>
                 </div>
                 @else
                     <div class="card-img-top">
@@ -124,7 +127,7 @@
                         </div>
                     </div>
                 @endif
-                <input class="button" type="submit" value="View All raids" onclick="window.location='/raids';" style="width: 90%;"/><br><br>
+
                 <!--input type="submit" value="Edit raid Details" onclick="window.location='/raids/{{$raid->gym_id}}/edit';" style="width: 45%"/-->
 
         </div>
