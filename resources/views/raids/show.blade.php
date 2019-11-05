@@ -49,7 +49,7 @@
                 if($raid->hatcht_time){
                 $raid_description = 'This  Gym has a level '.$raid->raid_tier.' raid hatching at '. date('h:i:s',strtotime($raid->hatch_time));
                 }else{
-                $raid_description = 'This  Gym has a  level'.$raid->raid_tier.' raid ending at '. date('h:i:s',strtotime($raid->end_time));
+                $raid_description = 'This  Gym has a level '.$raid->raid_tier.' raid ending at '. date('h:i:s',strtotime($raid->end_time));
                 }
             $move1 = 'TBD';
             $move2 = 'TBD';
