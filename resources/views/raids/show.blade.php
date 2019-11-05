@@ -141,17 +141,9 @@
                 var map = new google.maps.Map(
                     document.getElementById('map'),
                     {
-                    zoom: 15,
-                    position: uluru,
-                    addressControlOptions: {
-                        position: google.maps.ControlPosition.BOTTOM_CENTER
-                    },
-                    linksControl: false,
-                    panControl: false,
-                    zoomControlOptions: {
-                        style: google.maps.ZoomControlStyle.SMALL
-                    },
-                    enableCloseButton: false
+                        zoom: 15,
+                        center: uluru,
+
                     });
                 var icono = {
                     url: '{{$raid->boss_image}}',
