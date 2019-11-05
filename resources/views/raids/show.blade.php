@@ -162,7 +162,7 @@
                     position: uluru,
                     title: titulo,
                     map: map,
-                    label: labels,
+                    label: label,
                     icon: icono
                 });
             }
