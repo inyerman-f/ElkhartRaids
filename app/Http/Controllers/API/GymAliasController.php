@@ -30,9 +30,9 @@ class GymAliasController extends Controller
         $aliases = GymAlias::all();
         return response()->json($aliases);
     }
-    public function show_gym_aliases(Request $request)
+    public function show_gym_aliases($gym_name)
     {
-        $gym = GymAlias::where('gym_name',$request)->get();
+        $gym = GymAlias::where('gym_name',$gym_name)->get();
         if($gym){
             return $gym;
         }else{
