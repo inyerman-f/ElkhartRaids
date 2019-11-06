@@ -17,9 +17,10 @@ Route::post('mon-alias/add','API\MonAliasController@add');
 Route::get('mon-name/{mon_alias}','API\MonAliasController@get');
 
 Route::post('gym-alias/add','API\GymAliasController@add');
+Route::post('gym-aliases/{gym_name}','API\GymAliasController@show_gym_aliases');
 
 Route::get('gymdata', 'API\RaidController@show_gyms');
-Route::post('gym-alias/{gym_alias}','API\RaidController@get_gymid');
+
 Route::get('gym-alias-id/{gym_alias}','API\RaidController@get_gymid');
 Route::get('gym-alias-name/{gym_alias}','API\RaidController@get_gym_name');
 
