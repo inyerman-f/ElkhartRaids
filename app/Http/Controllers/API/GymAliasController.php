@@ -30,4 +30,14 @@ class GymAliasController extends Controller
         $aliases = GymAlias::all();
         return response()->json($aliases);
     }
+    public function show_gym_aliases(Request $request)
+    {
+        $gym = GymAlias::where('gym_name',$request)->get();
+        if($gym){
+            return $gym;
+        }else{
+            return response()->json('We could not find this gym :(');
+        }
+
+    }
 }
