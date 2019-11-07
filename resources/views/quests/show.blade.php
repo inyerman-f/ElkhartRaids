@@ -4,6 +4,10 @@
 $stop = \App\PokeStop::find($quest->pokestop_id);
 @endphp
 
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
+@endsection
+
 @section('htmlHead')
     @section('stylesheets')
     @endsection

@@ -17,6 +17,9 @@
 
 @endsection
 
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
+@endsection
 
 @section('header')
     @include('chunks.navHeader')
