@@ -62,6 +62,7 @@
 
 @endphp
 
+
 {{--set HTML Head params--}}
 @section('htmlHead')
     @section('stylesheets')
@@ -72,6 +73,10 @@
     @section('Description', $raid_description )
     @section('image', $raid->boss_image)
     @include('chunks.htmlHead')
+@endsection
+
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
 @endsection
 
 {{--@section('body_image', $body_image)--}}

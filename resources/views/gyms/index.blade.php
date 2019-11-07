@@ -7,11 +7,17 @@
     $body_image = $gymDetails->get_controlling_team_image($gymDetails->get_controlling_team());
 
 @endphp
+{{--
 @section('fbLogin')
     @include('chunks.social.fbLogin')
 @endsection
+--}}
 
 @section('body_image', $body_image)
+
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
+@endsection
 
 @include('chunks.htmlHead')
 

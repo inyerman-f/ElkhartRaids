@@ -18,6 +18,11 @@
 @include('chunks.htmlHead')
 @endsection
 
+
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
+@endsection
+
 @section('body_image', $body_image)
 
 @section('header')
