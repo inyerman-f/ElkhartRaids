@@ -18,6 +18,11 @@
 @include('chunks.htmlHead')
 @endsection
 
+
+@section('fbSDK')
+    @include('chunks.social.fbSDK')
+@endsection
+
 @section('body_image', $body_image)
 
 @section('header')
@@ -44,7 +49,7 @@
                     </div>
                     <div class="card-body">
                         <div class="card-text">
-                            <h1>Sorry, no raids are available at this time. Please check between 6:00 am and  8:00 pm, or look at our <a href="/quests/">quests</a> for the meantime.</h1>
+                            <h1>Sorry, no raids are available at this time. Please check between 6:00 am and  9:00 pm, or look at our <a href="/quests/">quests</a> for the meantime.</h1>
                         </div>
                     </div>
                 </div>
