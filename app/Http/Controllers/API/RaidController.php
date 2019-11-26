@@ -115,4 +115,11 @@ class RaidController extends Controller
             return response()->json('none-found');
         }
     }
+   public function showallraids()
+   {
+	
+	$raids = Raid::whereRaw('now() < DATE_ADD(end_time, INTERVAL '.env('UTC_TIME_DIFFERENCE').' HOUR)')->get();
+	//$raids = Raid::all();
+	return $raids;
+   }
 }
