@@ -12,11 +12,11 @@ class RaidController extends Controller
 {
     public function store(Request $request)
     {
-       // $gym= new GymDetails();
-       // $gym_id = $gym->get_gym_id_by_alias($request->gym_name);
+        //$gym= new GymDetails();
         $gym_name = GymAlias::where('gym_alias',$request->gym_name)->first();
         $gym_name = $gym_name['gym_name'];
-        $gym_id = GymDetails::where('name',$gym_name)->first();
+        //$gym_id = $gym->get_gym_id_by_alias($request->gym_name);
+        //$gym_id = GymDetails::where('name',$gym_name)->first();
         $gym_id = $gym_id['gym_id'];
         $boss_name = $request->boss_name;
         $boss_name = MonAlias::where('alias',$boss_name)->first();
@@ -66,6 +66,7 @@ class RaidController extends Controller
                     'boss_name'=>$boss_name,
                     'gym_name'=>$gym_name,
                     'end_time'=>$end_time,
+                    'gym_location'=>$location
                 ];
                 $ret = json_encode($ret['gym_id']);
                 return response()->json($ret);
@@ -90,6 +91,7 @@ class RaidController extends Controller
                     'gym_name'=>$gym_name,
                     'hatch'=>$hatch_time,
                     'end_time'=>$end_time,
+                    'gym_location'=>$location
                 ];
                 $ret = json_encode($ret['gym_id']);
             return response()->json($ret);
