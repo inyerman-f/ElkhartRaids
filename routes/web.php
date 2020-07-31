@@ -14,7 +14,7 @@
  * site landing page
  */
 Route::get('/', function () {
-    return view('home');
+    return view('raid.index');
 });
 
 /**
