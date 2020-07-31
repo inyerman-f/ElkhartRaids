@@ -27,9 +27,10 @@
             <li class="navbar-item">
                 <a class="nav-link" href="https://discord.gg/G2AHwBd"  target="_blank"> Join Our Discord</a>
             </li>
+            {{--
             <li class="navbar-item">
                 <a class="nav-link" href="https://m.me/join/AbZ4hk7JvPQRAnyL" target="_blank"> Join Us In Messenger</a>
-            </li>
+            </li>--}}
         </ul>
     </div>
 </nav>
