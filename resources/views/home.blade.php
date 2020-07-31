@@ -37,7 +37,7 @@
     <section class="section">
         <div class="card w-100 individual-item-card" style="color:white;background-color:grey;opacity: .9">
             <h1>Come Raid With Us.</h1>
-            <p>Please feel free to join us in our Raiding adventures. We are an active community of Pokemon GO trainers based in Elkhart, Indiana who enjoy doing raids on daily basis; while
+            <p class="intro-paragraph" >Please feel free to join us in our Raiding adventures. We are an active community of Pokemon GO trainers based in Elkhart, Indiana who enjoy doing raids on daily basis; while
                 sharing a few laughs with the community.  We aim to keep a safe and fun environment for our fellow trainers. Anyone and everyone is welcome to join us regardless of background, or
                 inclinations. We just ask to remain positive and respectful. Below are links to our messenger and discord groups. Both groups are linked through the use of bots
                 so regardless of what platform you choose, you will always be able to reach all of your friends. Stay safe and catch 'em all!
