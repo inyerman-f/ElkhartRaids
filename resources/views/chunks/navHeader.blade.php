@@ -11,9 +11,9 @@
             <li class="navbar-item">
                 <a class="nav-link" href="/raids">Raid List</a>
             </li>
-            <li class="navbar-item">
+            {{--<li class="navbar-item">
                 <a class="nav-link" href="/quests">Quest List</a>
-            </li>
+            </li>--}}
             <li class="navbar-item">
                 <a class="nav-link" href="/gyms">Gym List</a>
             </li>
